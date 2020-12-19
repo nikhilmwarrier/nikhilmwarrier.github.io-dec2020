@@ -92,7 +92,7 @@ body {
   background: linear-gradient(-90deg, rgb(72, 0, 187), rgb(122, 0, 153));
   background-size: 400% 400%;
   background-attachment: fixed;
-  animation: gradient 60s linear alternate infinite;
+  animation: gradient 15s linear alternate infinite;
 }
 
 @keyframes gradient {
