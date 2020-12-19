@@ -1,0 +1,388 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Righteous&family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --navbar-height: 75px;
+  --navbar-bg: #dfccee;
+  --navbar-width: 175px;
+  --body-font: "Work Sans", sans-serif;
+  --stylized-font: "Righteous", sans-serif;
+  font-size: calc(1em - 1px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+}
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid rgb(151, 98, 0);
+  background-color: rgb(255, 244, 180);
+  color: rgb(141, 93, 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  padding: 20px;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  min-height: 100%;
+  width: 100%;
+  scrollbar-color: rgb(50, 110, 102) var(--navbar-bg);
+  scrollbar-face-color: rgb(50, 110, 102);
+  scrollbar-highlight-color: var(--navbar-bg);
+}
+
+::-webkit-scrollbar {
+  width: 17px;
+}
+::-webkit-scrollbar-thumb {
+  border: 1px solidvar(--navbar-bg);
+  background-color: rgb(50, 110, 102);
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background-color: #40897f;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--navbar-bg);
+}
+::-webkit-scrollbar-button {
+  background-color: var(--navbar-bg);
+}
+
+::-webkit-scrollbar-button:hover {
+  background-color: #c7b7d3;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url(res/arrow_up.svg);
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+  background-image: url(res/arrow_down.svg);
+}
+
+::-webkit-scrollbar-button:horizontal {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 250, 229);
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #fff;
+}
+
+body {
+  background: linear-gradient(-90deg, rgb(72, 0, 187), rgb(122, 0, 153));
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradient 60s linear alternate infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.overlay {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.loader {
+  visibility: hidden;
+  opacity: 0;
+  animation: fadeout 2s ease-in;
+}
+
+@keyframes fadeout {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  50% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+  }
+}
+
+.spinner {
+  height: 100px;
+  width: 100px;
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  border-top-color: red;
+  animation: spin 1s ease-in infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+nav {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background-clip: padding-box;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all 0.2s ease;
+  z-index: 9;
+}
+
+nav a {
+  font-family: var(--stylized-font);
+  margin: 0 10px 0 10px;
+  color: rgb(50, 110, 102);
+  font-size: 1rem;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #303030;
+  text-decoration: underline;
+}
+
+.animate {
+  animation-delay: 2s;
+  animation: grow_wide 1s ease;
+}
+
+@keyframes grow_wide {
+  0% {
+    width: 0;
+  }
+  75% {
+    width: 0;
+  }
+}
+
+@keyframes wait {
+  from {
+  }
+  to {
+  }
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  margin: 0 5px 0 5px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+p {
+  line-height: 2rem;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--stylized-font);
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 5rem;
+}
+
+.main-logo {
+  height: 128px;
+  width: 128px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.main-logo img {
+  height: 96px;
+}
+
+.card-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  color: var(--textColor);
+  padding: 0px;
+  width: 300px;
+  height: 400px;
+  font-size: 1rem;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.card:last-child {
+  margin-right: 20px;
+}
+
+.card h3 {
+  margin: 10px;
+  font-size: 1.5rem;
+  color: rgb(72, 0, 187);
+}
+
+.card p {
+  margin: 10px;
+}
+
+.card-cta {
+  float: right;
+  margin: 0 0px 5px auto;
+  background-color: rgb(0, 204, 187);
+  padding: 5px 20px;
+  border-radius: 5px 0 5px 0;
+  color: #fff;
+}
+
+.card img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  object-position: top;
+}
+
+#contact {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contact-options {
+  font-size: 2rem;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+span.material-icons {
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  border-top: 1px solid #fff;
+}
+
+footer p {
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .card-list {
+    max-width: calc(100% - var(--navbar-width));
+    margin: auto auto auto 0;
+    padding-right: var(--navbar-width);
+    justify-content: flex-end;
+  }
+  .main {
+    margin: 0 auto;
+    max-width: 60%;
+  }
+  nav {
+    height: 100%;
+    width: var(--navbar-width);
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  nav a:first-child {
+    margin-top: var(--navbar-height);
+  }
+
+  nav a {
+    margin: 15px 0;
+    font-size: 1.5rem;
+  }
+}

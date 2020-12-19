@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="refresh"
+      content="5; url=mailto:champion.26nikhil@gmail.com"
+    />
+    <style>
+      .animated-h1:before {
+        content: "Generating email";
+        animation: change_text 4s;
+      }
+      @keyframes change_text {
+        0% {
+          content: "Generating email";
+        }
+        25% {
+          content: "Generating email.";
+        }
+        50% {
+          content: "Generating email..";
+        }
+        75% {
+          content: "Generating email...";
+        }
+        100% {
+          content: "Generating email....";
+        }
+      }
+    </style>
+    <title>Generating email</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section style="justify-content: space-evenly">
+      <h1
+        class="animated-h1"
+        style="font-size: 2rem; width: 320px; text-align: left"
+      ></h1>
+      <div class="spinner"></div>
+    </section>
+  </body>
+</html>
